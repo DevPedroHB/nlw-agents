@@ -1,5 +1,5 @@
 {
-  "name": "my-turborepo",
+  "name": "nlw-agents",
   "private": true,
   "scripts": {
     "build": "turbo run build",
