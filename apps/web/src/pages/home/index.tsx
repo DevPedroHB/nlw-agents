@@ -7,8 +7,6 @@ export default function Home() {
 	const { data, isLoading, error } = useFetchRooms();
 
 	if (error) {
-		console.error(error);
-
 		toast.error(error.message);
 	}
 

@@ -1,9 +1,13 @@
 import { api } from "@/libs/ky";
-import type { Room } from "@nlw-agents/db";
 import { useQuery } from "@tanstack/react-query";
 
 interface FetchRoomsResponse {
-	rooms: Room[];
+	rooms: {
+		name: number;
+		id: string;
+		createdAt: Date;
+		questionsCount: number;
+	}[];
 }
 
 export async function fetchRooms() {
