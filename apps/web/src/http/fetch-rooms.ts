@@ -1,12 +1,12 @@
 import { api } from "@/libs/ky";
 import { useQuery } from "@tanstack/react-query";
 
-interface FetchRoomsResponse {
+export interface FetchRoomsResponse {
 	rooms: {
-		name: number;
 		id: string;
-		createdAt: Date;
+		name: number;
 		questionsCount: number;
+		createdAt: Date;
 	}[];
 }
 
@@ -18,7 +18,7 @@ export async function fetchRooms() {
 
 export function useFetchRooms() {
 	return useQuery({
-		queryKey: ["rooms"],
+		queryKey: ["fetch-rooms"],
 		queryFn: fetchRooms,
 	});
 }

@@ -1,4 +1,4 @@
-import { db, roomInsertSchema, roomSelectSchema, schema } from "@nlw-agents/db";
+import { db, roomInsertSchema, schema } from "@nlw-agents/db";
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import { z } from "zod/v4";
 
@@ -13,7 +13,7 @@ export const createRoomController: FastifyPluginAsyncZod = async (app) => {
 				}),
 				response: {
 					201: z.object({
-						room: roomSelectSchema,
+						id: z.string().uuid(),
 					}),
 				},
 			},
@@ -36,7 +36,7 @@ export const createRoomController: FastifyPluginAsyncZod = async (app) => {
 			}
 
 			return reply.status(201).send({
-				room,
+				id: room.id,
 			});
 		},
 	);

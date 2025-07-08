@@ -1,9 +1,4 @@
-import {
-	db,
-	questionInsertSchema,
-	questionSelectSchema,
-	schema,
-} from "@nlw-agents/db";
+import { db, questionInsertSchema, schema } from "@nlw-agents/db";
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod";
 import { z } from "zod/v4";
 
@@ -22,7 +17,7 @@ export const createRoomQuestionController: FastifyPluginAsyncZod = async (
 				}),
 				response: {
 					201: z.object({
-						question: questionSelectSchema,
+						id: z.string().uuid(),
 					}),
 				},
 			},
@@ -46,7 +41,7 @@ export const createRoomQuestionController: FastifyPluginAsyncZod = async (
 			}
 
 			return reply.status(201).send({
-				question: newQuestion,
+				id: newQuestion.id,
 			});
 		},
 	);
