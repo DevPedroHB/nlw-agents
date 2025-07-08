@@ -73,7 +73,7 @@ Siga os passos abaixo para executar o projeto em seu ambiente local.
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/seu-usuario/nlw-agents.git
+   git clone https://github.com/DevPedroHB/nlw-agents.git
    cd nlw-agents
    ```
 
