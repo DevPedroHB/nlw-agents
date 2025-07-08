@@ -1,0 +1,6 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"_version": "24.0.0",
+	"extends": "@nlw-agents/typescript-config/vite.node.json",
+	"include": ["vite.config.ts"]
+}

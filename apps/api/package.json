@@ -10,7 +10,7 @@
 		"fastify-type-provider-zod": "^5.0.1",
 		"zod": "^3.25.75"
 	},
-	"description": "API for NLW Agents",
+	"description": "API for NLW Agents - Let me Ask",
 	"devDependencies": {
 		"@nlw-agents/typescript-config": "workspace:*",
 		"@types/node": "^24.0.10",
