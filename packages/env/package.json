@@ -1,0 +1,25 @@
+{
+	"author": "Pedro Henrique Bérgamo",
+	"dependencies": {
+		"zod": "^3.25.75"
+	},
+	"description": "Package for environment variables.",
+	"devDependencies": {
+		"@nlw-agents/typescript-config": "workspace:*",
+		"@types/node": "^24.0.10",
+		"dotenv-cli": "^8.0.0",
+		"tsup": "^8.5.0",
+		"tsx": "^4.20.3",
+		"typescript": "5.8.3"
+	},
+	"keywords": [
+		"env",
+		"environments"
+	],
+	"license": "MIT",
+	"main": "./src/index.ts",
+	"name": "@nlw-agents/env",
+	"packageManager": "pnpm@10.12.4",
+	"types": "./src/index.ts",
+	"version": "1.0.0"
+}

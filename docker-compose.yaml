@@ -1,0 +1,19 @@
+# CREATE EXTENSION IF NOT EXISTS vector;
+
+version: "3.8"
+
+services:
+  pgvector:
+    image: pgvector/pgvector:pg17
+    container_name: pgvector
+    restart: always
+    ports:
+      - "33104:5432"
+    environment:
+      POSTGRES_PASSWORD: "DB@pgv3ct0r"
+      POSTGRES_MAX_CONNECTIONS: 100000
+    volumes:
+      - "pgvector_data:/bitnami/postgresql"
+
+volumes:
+  pgvector_data:
