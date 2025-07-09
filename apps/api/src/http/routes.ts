@@ -3,6 +3,7 @@ import { createRoomController } from "./controllers/rooms/create-room-controller
 import { createRoomQuestionController } from "./controllers/rooms/create-room-question-controller";
 import { fetchRoomQuestionsController } from "./controllers/rooms/fetch-room-questions-controller";
 import { fetchRoomsController } from "./controllers/rooms/fetch-rooms-controller";
+import { uploadAudioController } from "./controllers/rooms/upload-audio-controller";
 
 export const routes: FastifyPluginAsyncZod = async (app) => {
 	// Rooms
@@ -10,4 +11,5 @@ export const routes: FastifyPluginAsyncZod = async (app) => {
 	app.register(fetchRoomsController);
 	app.register(createRoomQuestionController);
 	app.register(fetchRoomQuestionsController);
+	app.register(uploadAudioController);
 };

@@ -1,4 +1,5 @@
 import fastifyCors from "@fastify/cors";
+import fastifyMultipart from "@fastify/multipart";
 import fastify from "fastify";
 import {
 	serializerCompiler,
@@ -15,6 +16,8 @@ app.setValidatorCompiler(validatorCompiler);
 app.register(fastifyCors, {
 	origin: true,
 });
+
+app.register(fastifyMultipart);
 
 app.register(routes, {
 	prefix: "/api/v1",

@@ -1,11 +1,10 @@
 import { getQueryClient } from "@/libs/get-query-client";
 import { api } from "@/libs/ky";
 import type { CreateRoomSchema } from "@/pages/home/components/create-room-form";
-import type { RoomSelect } from "@nlw-agents/db";
 import { useMutation } from "@tanstack/react-query";
 
 export interface CreateRoomResponse {
-	room: RoomSelect;
+	id: string;
 }
 
 export async function createRoom(data: CreateRoomSchema) {

@@ -15,8 +15,10 @@ import {
 	FormMessage,
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
+import { useCreateRoomQuestion } from "@/http/create-room-question";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod/v4";
 
 export const createQuestionSchema = z.object({
@@ -30,8 +32,6 @@ interface ICreateQuestionForm {
 }
 
 export function CreateQuestionForm({ roomId }: ICreateQuestionForm) {
-	console.log(roomId);
-
 	const form = useForm<CreateQuestionSchema>({
 		resolver: zodResolver(createQuestionSchema),
 		defaultValues: {
@@ -40,11 +40,19 @@ export function CreateQuestionForm({ roomId }: ICreateQuestionForm) {
 	});
 
 	const { isSubmitting } = form.formState;
+	const { mutateAsync } = useCreateRoomQuestion(roomId);
 
 	async function handleCreateQuestion(data: CreateQuestionSchema) {
-		console.log(data);
+		await mutateAsync(data, {
+			onError(error) {
+				toast.error(error.message);
+			},
+			onSuccess() {
+				toast.success("Pergunta criada com sucesso!");
 
-		form.reset();
+				form.reset();
+			},
+		});
 	}
 
 	return (
@@ -80,7 +88,7 @@ export function CreateQuestionForm({ roomId }: ICreateQuestionForm) {
 								</FormItem>
 							)}
 						/>
-						<Button type="submit" disabled={isSubmitting}>
+						<Button type="submit" isLoading={isSubmitting}>
 							Enviar pergunta
 						</Button>
 					</form>

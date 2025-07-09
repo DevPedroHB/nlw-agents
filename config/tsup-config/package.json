@@ -4,7 +4,7 @@
 	},
 	"license": "MIT",
 	"main": "./tsup.config.ts",
-	"name": "@pedrohb/tsup-config",
+	"name": "@nlw-agents/tsup-config",
 	"private": true,
 	"publishConfig": {
 		"access": "public"

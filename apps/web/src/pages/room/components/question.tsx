@@ -1,15 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { formatRelative } from "@/functions/format-relative";
+import type { TQuestion } from "@/http/fetch-room-questions";
 import { Bot, Loader2, MessageSquare } from "lucide-react";
 
 interface IQuestion {
-	question: {
-		id: string;
-		question: string;
-		answer: string;
-		isGeneratingAnswer?: boolean;
-		createdAt: Date;
-	};
+	question: TQuestion;
 }
 
 export function Question({ question }: IQuestion) {

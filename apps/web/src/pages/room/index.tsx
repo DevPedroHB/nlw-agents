@@ -16,7 +16,7 @@ export default function Room() {
 	}
 
 	return (
-		<main className="bg-zinc-950 min-h-screen">
+		<main className="min-h-screen">
 			<div className="mx-auto px-4 py-8 max-w-4xl container">
 				<div className="mb-8">
 					<div className="flex justify-between items-center mb-4">
@@ -40,7 +40,7 @@ export default function Room() {
 						Sala de Perguntas
 					</h1>
 					<p className="text-muted-foreground">
-						Faça perguntas e receba respostas com IA
+						Faça perguntas e receba respostas com IA.
 					</p>
 				</div>
 				<div className="mb-8">

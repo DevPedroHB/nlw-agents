@@ -53,6 +53,8 @@ export function CreateRoomForm() {
 		});
 	}
 
+	const { isSubmitting } = form.formState;
+
 	return (
 		<Card>
 			<CardHeader>
@@ -78,6 +80,7 @@ export function CreateRoomForm() {
 										<Input
 											type="text"
 											placeholder="Digite o nome da sala..."
+											disabled={isSubmitting}
 											required
 											{...field}
 										/>
@@ -95,6 +98,7 @@ export function CreateRoomForm() {
 									<FormControl>
 										<Textarea
 											placeholder="Digite a descrição da sala..."
+											disabled={isSubmitting}
 											{...field}
 										/>
 									</FormControl>
@@ -102,7 +106,7 @@ export function CreateRoomForm() {
 								</FormItem>
 							)}
 						/>
-						<Button type="submit" className="w-full">
+						<Button type="submit" isLoading={isSubmitting} className="w-full">
 							Criar sala
 						</Button>
 					</form>

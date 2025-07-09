@@ -1,10 +1,10 @@
 {
 	"$schema": "https://turborepo.com/schema.json",
-	"globalEnv": ["DATABASE_URL", "VITE_API_URL"],
+	"globalEnv": ["DATABASE_URL", "GEMINI_API_KEY", "VITE_API_URL"],
 	"tasks": {
 		"build": {
 			"dependsOn": ["^build", "^db:generate"],
-			"env": ["DATABASE_URL", "VITE_API_URL"],
+			"env": ["DATABASE_URL", "GEMINI_API_KEY", "VITE_API_URL"],
 			"inputs": ["$TURBO_DEFAULT$", ".env*"],
 			"outputs": [".next/**", "!.next/cache/**", "dist/**"]
 		},
@@ -24,6 +24,11 @@
 		},
 		"lint": {
 			"dependsOn": ["^lint"]
+		},
+		"start": {
+			"cache": false,
+			"dependsOn": ["build"],
+			"env": ["DATABASE_URL", "GEMINI_API_KEY", "VITE_API_URL"]
 		}
 	},
 	"ui": "tui"

@@ -1,13 +1,15 @@
 import { api } from "@/libs/ky";
 import { useQuery } from "@tanstack/react-query";
 
+export type TRoom = {
+	id: string;
+	name: number;
+	questionsCount: number;
+	createdAt: Date;
+};
+
 export interface FetchRoomsResponse {
-	rooms: {
-		id: string;
-		name: number;
-		questionsCount: number;
-		createdAt: Date;
-	}[];
+	rooms: TRoom[];
 }
 
 export async function fetchRooms() {
