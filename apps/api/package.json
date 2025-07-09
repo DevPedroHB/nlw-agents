@@ -13,6 +13,7 @@
 	},
 	"description": "API for NLW Agents - Let me Ask",
 	"devDependencies": {
+		"@nlw-agents/tsup-config": "workspace:*",
 		"@nlw-agents/typescript-config": "workspace:*",
 		"@types/node": "^24.0.10",
 		"dotenv-cli": "^8.0.0",
@@ -25,7 +26,8 @@
 		"nlw-agents"
 	],
 	"license": "MIT",
-	"main": "./src/server.ts",
+	"main": "./dist/server.js",
+	"module": "./dist/server.mjs",
 	"name": "@nlw-agents/api",
 	"packageManager": "pnpm@10.12.4",
 	"scripts": {
@@ -34,5 +36,6 @@
 		"env:load": "dotenv -e ../../.env --",
 		"start": "node ."
 	},
+	"types": "./dist/server.d.ts",
 	"version": "1.0.0"
 }
