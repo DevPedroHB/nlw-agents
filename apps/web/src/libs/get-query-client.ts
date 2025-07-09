@@ -15,6 +15,8 @@ function makeQueryClient() {
 					defaultShouldDehydrateQuery(query) ||
 					query.state.status === "pending",
 				shouldRedactErrors: (error) => {
+					console.log(error);
+
 					return false;
 				},
 			},
